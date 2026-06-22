@@ -1,0 +1,65 @@
+#!/bin/bash
+
+MODULE_DIR="/usr/lib/sysauditkit"
+
+show_help() {
+    echo "Usage: sysauditkit <commande>"
+    echo ""
+    echo "Commandes disponibles:"
+    echo "  init      Initialiser le système"
+    echo "  report    Générer un rapport"
+    echo "  search    Rechercher des fichiers"
+    echo "  monitor   Surveiller les processus"
+    echo "  help      Afficher cette aide"
+}
+
+if [ $# -lt 1 ]; then
+  show_help
+  exit 1
+fi
+COMMAND="$1"
+shift
+
+case "$COMMAND" in
+    init)
+if [ -f "$MODULE_DIR/init.sh" ]; then
+    bash "$MODULE_DIR/init.sh" "$@"
+else
+    echo "ERREUR: Module init.sh introuvable"
+    exit 1
+fi
+;;
+    report)
+if [ -f "$MODULE_DIR/report.sh" ]; then
+    bash "$MODULE_DIR/report.sh" "$@"
+else
+    echo "ERREUR: Module report.sh introuvable"
+    exit 1
+fi
+;;
+    search)
+if [ -f "$MODULE_DIR/search.sh" ]; then
+    bash "$MODULE_DIR/search.sh" "$@"
+else
+    echo "ERREUR: Module search.sh introuvable"
+    exit 1
+fi
+;;
+    monitor)
+if [ -f "$MODULE_DIR/monitor.sh" ]; then
+    bash "$MODULE_DIR/monitor.sh" "$@"
+else
+    echo "ERREUR: Module monitor.sh introuvable"
+    exit 1
+fi
+;;
+help|--help|-h)
+    show_help
+;;
+    *)
+    echo "Erreur: Commande inconnue '$COMMAND'"
+    echo ""
+    show_help
+exit 1
+;;
+esac

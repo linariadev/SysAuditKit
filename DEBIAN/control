@@ -1,0 +1,17 @@
+Package: sysauditkit
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: all
+Maintainer: Lina Ben yassi <benyassilina@gmail.com>
+Description: Outil d'audit et gestion système Linux
+ SysAuditKit fournit des scripts shell pour l'audit
+ et la gestion basique d'un système Linux.
+ .
+ Fonctionnalités:
+  - Initialisation système et gestion des utilisateurs
+  - Génération de rapports système détaillés
+  - Recherche avancée de fichiers et analyse de contenu
+  - Surveillance et gestion des processus
+ .
+ Destiné aux environnements de travaux pratiques.
