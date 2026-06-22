@@ -18,8 +18,25 @@ Note: All scripts and system output messages are written in French.
 
 ## Installation
 
+**1. Clone the repository**
+```bash
+git clone https://github.com/linariadev/SysAuditKit.git
+cd SysAuditKit
+```
+
+**2. Build the package**
+```bash
+dpkg-deb --build sysauditkit_1.0.0_all
+```
+
+**3. Install**
 ```bash
 sudo dpkg -i sysauditkit_1.0.0_all.deb
+```
+
+**4. Verify**
+```bash
+dpkg -l | grep sysauditkit
 ```
 
 ## Usage
