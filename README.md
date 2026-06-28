@@ -71,6 +71,6 @@ sysauditkit_1.0.0_all/
 
 ## Author
 
-Lina Ben Yassi — EMSI Tanger, 3IIR
+Lina BEN YASSI [@linariadev](https://github.com/linariadev)
 
 Note: This is an academic project (January 2026).
